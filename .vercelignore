@@ -1,0 +1,15 @@
+node_modules
+tests
+/vendor/phpunit
+/vendor/fakerphp
+/vendor/mockery
+/vendor/sebastian
+/vendor/myclabs
+/vendor/phar-io
+/vendor/theseer
+/vendor/phpdocumentor
+/vendor/phpstan
+storage/framework/cache/*
+storage/framework/views/*
+storage/logs/*
+resources/assets
