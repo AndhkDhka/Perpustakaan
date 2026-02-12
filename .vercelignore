@@ -1,5 +1,5 @@
 node_modules
-tests
+/tests
 /vendor/phpunit
 /vendor/fakerphp
 /vendor/mockery
@@ -13,3 +13,5 @@ storage/framework/cache/*
 storage/framework/views/*
 storage/logs/*
 resources/assets
+public/images
+public/assets/images
