@@ -1,6 +1,6 @@
 <?php
 
-// Buat struktur folder di /tmp agar Laravel tidak bingung
+// Menyiapkan folder storage di RAM (/tmp)
 $storagePaths = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache',
@@ -14,6 +14,7 @@ foreach ($storagePaths as $path) {
     }
 }
 
+// Jalankan aplikasi
 require __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
