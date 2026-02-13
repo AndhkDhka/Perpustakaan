@@ -1,6 +1,6 @@
 <?php
 
-// Menyiapkan folder storage di RAM (/tmp)
+// 1. Setup folder sementara di RAM Vercel
 $storagePaths = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache',
@@ -14,10 +14,11 @@ foreach ($storagePaths as $path) {
     }
 }
 
-// Jalankan aplikasi
+// 2. Load aplikasi Laravel
 require __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
+// 3. Jalankan Kernel
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()

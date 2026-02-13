@@ -17,7 +17,7 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })->create();
 
-// TAMBAHKAN KODE INI DI PALING BAWAH SEBELUM return $app;
+// PENTING: Paksa folder storage ke /tmp khusus di Vercel
 if (isset($_SERVER['VERCEL_URL'])) {
     $app->useStoragePath('/tmp/storage');
 }
