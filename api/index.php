@@ -1,11 +1,16 @@
 <?php
-// api/index.php
 
-// Pastikan folder cache dialihkan ke /tmp (karena Vercel Read-Only)
-putenv('APP_CONFIG_CACHE=/tmp/config.php');
-putenv('APP_ROUTES_CACHE=/tmp/routes.php');
-putenv('APP_SERVICES_CACHE=/tmp/services.php');
-putenv('APP_PACKAGES_CACHE=/tmp/packages.php');
+// Pastikan folder cache dialihkan ke /tmp karena Vercel bersifat Read-Only
+$tmpDir = '/tmp/laravel/framework';
+foreach (['/views', '/cache', '/sessions'] as $path) {
+    if (!is_dir($tmpDir . $path)) {
+        mkdir($tmpDir . $path, 0777, true);
+    }
+}
+
+putenv("VIEW_COMPILED_PATH=$tmpDir/views");
+putenv("APP_CONFIG_CACHE=$tmpDir/config.php");
+putenv("APP_ROUTES_CACHE=$tmpDir/routes.php");
 
 require __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__ . '/../bootstrap/app.php';
